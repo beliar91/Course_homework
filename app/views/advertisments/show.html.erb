@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User who published:</strong>
+  <%= @advertisment.user.username %>
+</p>
+
+
+<p>
+  <strong>Description:</strong>
+  <%= @advertisment.description %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @advertisment.title %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag @advertisment.photo, style: :medium %>
+</p>
+
+<%= link_to 'Edit', edit_advertisment_path(@advertisment) %> |
+<%= link_to 'Back', advertisments_path %>

@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Advertisments</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Description</th>
+    <th>Title</th>
+    <th>User who published</th>
+    <th>Photo</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% advertisments.each do |advertisment| %>
+      <tr>
+        <td><%= advertisment.description %></td>
+        <td><%= advertisment.title %></td>
+        <td><%= advertisment.user.username %></td>
+        <td><%= image_tag advertisment.photo, width: 200, height: 200 %></td>
+        <td><%= link_to 'Show', advertisment %></td>
+        <td><%= link_to 'Edit', edit_advertisment_path(advertisment) %></td>
+        <td><%= link_to 'Destroy', advertisment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
